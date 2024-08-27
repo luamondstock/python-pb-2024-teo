@@ -1,44 +1,53 @@
-
 import os
-
-def mostrar_opcoes():
+def mostra_titulo():
     print('''
 
-    ░█████╗░███╗░░██╗███████╗██╗░██████╗  ███╗░░░███╗░█████╗░░██████╗░██╗░█████╗░░█████╗░░██████╗
-    ██╔══██╗████╗░██║██╔════╝██║██╔════╝  ████╗░████║██╔══██╗██╔════╝░██║██╔══██╗██╔══██╗██╔════╝
-    ███████║██╔██╗██║█████╗░░██║╚█████╗░  ██╔████╔██║███████║██║░░██╗░██║██║░░╚═╝██║░░██║╚█████╗░
-    ██╔══██║██║╚████║██╔══╝░░██║░╚═══██╗  ██║╚██╔╝██║██╔══██║██║░░╚██╗██║██║░░██╗██║░░██║░╚═══██╗
-    ██║░░██║██║░╚███║███████╗██║██████╔╝  ██║░╚═╝░██║██║░░██║╚██████╔╝██║╚█████╔╝╚█████╔╝██████╔╝
-    ╚═╝░░╚═╝╚═╝░░╚══╝╚══════╝╚═╝╚═════╝░  ╚═╝░░░░░╚═╝╚═╝░░╚═╝░╚═════╝░╚═╝░╚════╝░░╚════╝░╚═════╝░
-    ''')
+        ░█████╗░███╗░░██╗███████╗██╗░██████╗  ███╗░░░███╗░█████╗░░██████╗░██╗░█████╗░░█████╗░░██████╗
+        ██╔══██╗████╗░██║██╔════╝██║██╔════╝  ████╗░████║██╔══██╗██╔════╝░██║██╔══██╗██╔══██╗██╔════╝
+        ███████║██╔██╗██║█████╗░░██║╚█████╗░  ██╔████╔██║███████║██║░░██╗░██║██║░░╚═╝██║░░██║╚█████╗░
+        ██╔══██║██║╚████║██╔══╝░░██║░╚═══██╗  ██║╚██╔╝██║██╔══██║██║░░╚██╗██║██║░░██╗██║░░██║░╚═══██╗
+        ██║░░██║██║░╚███║███████╗██║██████╔╝  ██║░╚═╝░██║██║░░██║╚██████╔╝██║╚█████╔╝╚█████╔╝██████╔╝
+        ╚═╝░░╚═╝╚═╝░░╚══╝╚══════╝╚═╝╚═════╝░  ╚═╝░░░░░╚═╝╚═╝░░╚═╝░╚═════╝░╚═╝░╚════╝░░╚════╝░╚═════╝░
+        ''')
 
-
+def mostra_escolhas():
     print('1. Cadastrar cliente')
-    print('2. Listar cliente')
-    print('3. Ativar/Desativar cliente')
+    print('2. Listar livro')
+    print('3. Ativar/Desativar leitura')
     print('4.Sair')
 
-    opcao_escolhida = int(input ('Escolha uma opção:'))
+def escolhe_opcao():
+    try:
+        opcao_escolhida = int(input('Escolha uma opção:'))
 
-    def cadastrar_cliente():
-          print ('Você escolheu Cadastrar cliente')
+        def finaliza_programa():
+            os.system("cls")
+            print('Finalizando o programa')
 
-    def listar_cliente():
-          print ('Você escolheu Listar cliente') 
+        def opcao_invalida():
+            print('Opa, este caracter não é permitido\n')
+            input('Aperte qualquer tecla para voltar')
+            main()
 
-    def ativar_cliente():
-          print ('Você escolheu Ativar/Desativar')
+        if opcao_escolhida == 1:
+            print('Você escolheu Cadastrar cliente')
+        elif opcao_escolhida == 2:
+            print('Você esacolheu Listar livro')
+        elif opcao_escolhida == 3:
+            print('Você escolheu Ativar leitura')
+        elif opcao_escolhida == 4:
+            finaliza_programa()
+        else :
+            opcao_invalida()
+    except: 
+        opcao_invalida()
 
-    def finaliza_programa ():
-        os.system('cls')
-        print ("finalizar_programa")
+def main():
+    mostra_titulo()
+    mostra_escolhas()
+    escolhe_opcao()
+opcao_escolhida = int(input('Escolha uma opção:'))
 
-    if opcao_escolhida == 1:
-        cadastrar_cliente()
-    elif opcao_escolhida == 2:
-        listar_cliente()
-    elif opcao_escolhida == 3:
-        ativar_cliente()
-    else: 
-        print ('Finalizar programa')
+if __name__ == '__main__':
+    main()
 
