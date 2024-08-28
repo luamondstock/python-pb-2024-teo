@@ -20,6 +20,16 @@ def escolhe_opcao():
     try:
         opcao_escolhida = int(input('Escolha uma opção:'))
 
+        def cadastra_cliente():
+            os.system('cls'),
+            print('Cadastro de novos clintes\n')
+            nome_cliente = input('Digite o nome do cliente que deseja cadastrar')
+            clientes.append(nome_cliente)
+            print(f'O cliente {'nome_cliente'} foi cadastrado com sucesso\n')
+            input(' Digite uma tecla para voltar ao menu principal ')
+            main()
+            
+        
         def finaliza_programa():
             os.system("cls")
             print('Finalizando o programa')
