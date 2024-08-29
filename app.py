@@ -2,16 +2,15 @@ import os
 
 livros = [{'nome': 'Imperfeitos', 'genero': 'Young adult', 'ativo': True},
           {'nome': 'Divergente', 'genero': 'Distopia', 'ativo': False},
-          {'nome': 'Pai Rico Pai Pobre', 'genero': 'Auto-ajuda', 'ativo': True}]
+          {'nome': 'Pai Rico Pai Pobre', 'genero': 'Auto-ajuda', 'ativo': True}
+          
+          ]
 def mostra_titulo():
     print('''
 
-        ░█████╗░███╗░░██╗███████╗██╗░██████╗  ███╗░░░███╗░█████╗░░██████╗░██╗░█████╗░░█████╗░░██████╗
-        ██╔══██╗████╗░██║██╔════╝██║██╔════╝  ████╗░████║██╔══██╗██╔════╝░██║██╔══██╗██╔══██╗██╔════╝
-        ███████║██╔██╗██║█████╗░░██║╚█████╗░  ██╔████╔██║███████║██║░░██╗░██║██║░░╚═╝██║░░██║╚█████╗░
-        ██╔══██║██║╚████║██╔══╝░░██║░╚═══██╗  ██║╚██╔╝██║██╔══██║██║░░╚██╗██║██║░░██╗██║░░██║░╚═══██╗
-        ██║░░██║██║░╚███║███████╗██║██████╔╝  ██║░╚═╝░██║██║░░██║╚██████╔╝██║╚█████╔╝╚█████╔╝██████╔╝
-        ╚═╝░░╚═╝╚═╝░░╚══╝╚══════╝╚═╝╚═════╝░  ╚═╝░░░░░╚═╝╚═╝░░╚═╝░╚═════╝░╚═╝░╚════╝░░╚════╝░╚═════╝░
+
+█▄▄ █ █▄▄ █░░ █ █▀█ ▀█▀ █▀▀ █▀▀ ▄▀█   █▀▄▀█ █▀█ █▀█ █▄░█
+█▄█ █ █▄█ █▄▄ █ █▄█ ░█░ ██▄ █▄▄ █▀█   █░▀░█ █▄█ █▄█ █░▀█
         ''')
 
 def mostra_escolhas():
@@ -35,8 +34,11 @@ def escolhe_opcao():
     def cadastra_livro():
         exibir_subtitulo('Cadastrar livro')
         nome_livro = input('Digite o nome do livro que deseja cadastrar')
-        livros.append(nome_livro)
+        livro_genero = input(f'Digite o genero de {nome_livro} que irá cadastrar')
+        dados_do_livro = {'nome': nome_livro, 'genero': livro_genero, 'ativo': True}
+        livros.append(dados_do_livro)
         print(f'O livro {nome_livro} foi cadastrado com sucesso\n')
+
         retorna_menu()
 
     def listar_livro():
