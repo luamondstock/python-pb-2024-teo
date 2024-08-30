@@ -22,7 +22,7 @@ def mostra_escolhas():
 def escolhe_opcao():
         
     def exibir_subtitulo(texto):
-        os.system('cls')
+        os.system('clear')
         print(texto)
         print ('')
 
@@ -51,6 +51,17 @@ def escolhe_opcao():
             print (f'- {nome_livro} | {livro_genero} | {ativo}')
         retorna_menu()
         
+
+    def ativar_livro():
+        exibir_subtitulo('Ativar livro') 
+        nome_livro = input ('Digite o nome do livro para ativar') 
+        livro_encontrado = False
+        for livro in livros:
+            if nome_livro == livro['livro']:
+                livro_encontrado = 
+                Livro ['ativo'] = not livro 
+                mensagem = f
+
     
     def finaliza_programa():
         exibir_subtitulo("Finalizando o programa\n")
