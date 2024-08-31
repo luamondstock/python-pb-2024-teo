@@ -22,7 +22,7 @@ def mostra_escolhas():
 def escolhe_opcao():
         
     def exibir_subtitulo(texto):
-        os.system('clear')
+        os.system('cls')
         print(texto)
         print ('')
 
@@ -56,11 +56,16 @@ def escolhe_opcao():
         exibir_subtitulo('Ativar livro') 
         nome_livro = input ('Digite o nome do livro para ativar') 
         livro_encontrado = False
+
         for livro in livros:
             if nome_livro == livro['livro']:
-                livro_encontrado = 
-                Livro ['ativo'] = not livro 
-                mensagem = f
+                livro_encontrado = True
+                Livro ['ativo'] = not livro ['ativo']
+                mensagem = f'O cadastro do {nome_livro} foi ativado com sucesso'if livro['ativo'] else f'O cadastro {nome_livro} foi desativado'
+                print(mensagem)
+            if not livro_encontrado:
+                  print('Não encontrado') 
+            retorna_menu()
 
     
     def finaliza_programa():
