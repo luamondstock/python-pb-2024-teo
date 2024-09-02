@@ -57,7 +57,7 @@ def escolhe_opcao():
 
           
 
-    def ativar_livro():
+    def ativar_leitura():
         exibir_subtitulo('Ativar livro') 
         nome_livro = input ('Digite o nome do livro para ativar:') 
         livro_encontrado = False
@@ -91,7 +91,7 @@ def escolhe_opcao():
         elif opcao_escolhida == 2:
            listar_livro()
         elif opcao_escolhida == 3:
-           print('Você escolheu Ativar leitura')
+           ativar_leitura()
         elif opcao_escolhida == 4:
             finaliza_programa()
         else :
