@@ -23,7 +23,10 @@ def escolhe_opcao():
         
     def exibir_subtitulo(texto):
         os.system('cls')
+        linha  = '*' * len (texto)
+        print(linha)
         print(texto)
+        print(linha) 
         print ('')
 
     def retorna_menu():
@@ -44,17 +47,19 @@ def escolhe_opcao():
     def listar_livro():
         exibir_subtitulo('Listar de livros cadastrados')
 
-        for livro in livros:
+          print(f'[Nome do livro'.ljust(22)} | {'livro'.ljust(20)} \ Status ')
+          for livro in livros:
             nome_livro = livro['nome']
             livro_genero = livro['genero']
-            ativo = livro['ativo']
-            print (f'- {nome_livro} | {livro_genero} | {ativo}')
+            ativo = 'Ativado' if livro['ativo'] else 'Desativado'
+            print (f'- {nome_livro.ljust(20)]} | {livro_genero.ljust(20)} | {ativo}')
         retorna_menu()
-        
+
+          
 
     def ativar_livro():
         exibir_subtitulo('Ativar livro') 
-        nome_livro = input ('Digite o nome do livro para ativar') 
+        nome_livro = input ('Digite o nome do livro para ativar:') 
         livro_encontrado = False
 
         for livro in livros:
@@ -63,6 +68,7 @@ def escolhe_opcao():
                 Livro ['ativo'] = not livro ['ativo']
                 mensagem = f'O cadastro do {nome_livro} foi ativado com sucesso'if livro['ativo'] else f'O cadastro {nome_livro} foi desativado'
                 print(mensagem)
+                      
             if not livro_encontrado:
                   print('Não encontrado') 
             retorna_menu()
