@@ -17,7 +17,7 @@ def mostra_escolhas():
     print('1. Cadastrar livro')
     print('2. Listar livro')
     print('3. Ativar/Desativar leitura')
-    print('4.Sair')
+    print('4.Sair\n')
 
 def escolhe_opcao():
         
@@ -36,6 +36,7 @@ def escolhe_opcao():
 
     def cadastra_livro():
         exibir_subtitulo('Cadastrar livro')
+              
         nome_livro = input('Digite o nome do livro que deseja cadastrar')
         livro_genero = input(f'Digite o genero de {nome_livro} que irá cadastrar')
         dados_do_livro = {'nome': nome_livro, 'genero': livro_genero, 'ativo': True}
@@ -45,28 +46,29 @@ def escolhe_opcao():
         retorna_menu()
 
     def listar_livro():
-        exibir_subtitulo('Listar de livros cadastrados')
+        exibir_subtitulo('Listar livros cadastrados')
 
-          print(f'[Nome do livro'.ljust(22)} | {'livro'.ljust(20)} \ Status ')
+          print(f'{Nome do livro'.ljust(22)} | {'livro'.ljust(20)} | Status ')
           for livro in livros:
             nome_livro = livro['nome']
             livro_genero = livro['genero']
             ativo = 'Ativado' if livro['ativo'] else 'Desativado'
-            print (f'- {nome_livro.ljust(20)]} | {livro_genero.ljust(20)} | {ativo}')
+            print (f' - {nome_livro.ljust(20)]} | {livro_genero.ljust(20)} | {ativo}')
+              
         retorna_menu()
 
           
 
     def ativar_leitura():
-        exibir_subtitulo('Ativar livro') 
+        exibir_subtitulo('Ativar leitura') 
         nome_livro = input ('Digite o nome do livro para ativar:') 
         livro_encontrado = False
 
         for livro in livros:
             if nome_livro == livro['livro']:
                 livro_encontrado = True
-                Livro ['ativo'] = not livro ['ativo']
-                mensagem = f'O cadastro do {nome_livro} foi ativado com sucesso'if livro['ativo'] else f'O cadastro {nome_livro} foi desativado'
+                livro ['ativo'] = not livro ['ativo']
+                mensagem = f'O cadastro de {nome_livro} foi ativado com sucesso'if livro['ativo'] else f'O cadastro {nome_livro} foi desativado'
                 print(mensagem)
                       
             if not livro_encontrado:
